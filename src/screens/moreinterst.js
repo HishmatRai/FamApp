@@ -77,7 +77,7 @@ const Moreinterest = (props) => {
             <StatusBar barStyle="dark-content" hidden={false} backgroundColor="white" translucent={true} />
             {/* <<<<<<<<<<<<<<<<<<<<<<<<<<   LOGO SECTION  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */}
             <ScrollView style={{ margin: 20 }} showsVerticalScrollIndicator={false} >
-                <Image source={require('./../../assets/updated_logo.png')} style={styles._logo} />
+                <Image source={require('./../../assets/logo2.png')} style={styles._logo} />
 
                 {/* <<<<<<<< Name <<<<<<<< */}
                 <View style={styles._name_main}>
@@ -85,7 +85,7 @@ const Moreinterest = (props) => {
                         style={styles._mob_number_setting_main}
                         placeholder="My First Name"
                         style={styles._name_input}
-                        placeholderTextColor="#2545A3"
+                        placeholderTextColor="#000000"
                     />
                 </View>
 
@@ -100,9 +100,9 @@ const Moreinterest = (props) => {
 
                 {/* <<<<<<<< Location <<<<<<<< */}
                 <View style={styles._location_main}>
-                    <Text style={styles._location}>Location</Text>
+                    <Text style={styles._location}>Dallas, USA</Text>
                     <TouchableOpacity onPress={() => locationPermission()}>
-                        <MaterialIcons name="my-location" size={24} color="#F03030" />
+                        <MaterialIcons name="my-location" size={24} color="#03F435" />
                     </TouchableOpacity>
                 </View>
 
@@ -114,69 +114,6 @@ const Moreinterest = (props) => {
                 {/* <<<<<<<< Area Of Interest <<<<<<<< */}
                 <Text style={styles._gender}>Area Of Interest</Text>
 
-                {/* <<<<<<<<<<  1 >>>>>>>>>>>.*/}
-                <View style={styles._chips_main}>
-                    <TouchableOpacity style={styles._chips}>
-                        <Text style={styles._chips_text}>Trust</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles._chips}>
-                        <Text style={styles._chips_text}>Gun Rights</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles._chips}>
-                        <Text style={styles._chips_text}>Charity</Text>
-                    </TouchableOpacity>
-                </View>
-
-                {/* <<<<<<<<<<  2 >>>>>>>>>>>.*/}
-                <View style={styles._chips_main}>
-                    <TouchableOpacity style={styles._chips2}>
-                        <Text style={styles._chips_text2}>Hard Work</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles._chips}>
-                        <Text style={styles._chips_text}>Self-help</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles._chips2}>
-                        <Text style={styles._chips_text2}>Justice</Text>
-                    </TouchableOpacity>
-                </View>
-
-
-                {/* <<<<<<<<<<  3 >>>>>>>>>>>.*/}
-                <View style={styles._chips_main}>
-                    <TouchableOpacity style={styles._chips2}>
-                        <Text style={styles._chips_text2}>Dignity</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles._chips}>
-                        <Text style={styles._chips_text}>Free Speech</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles._chips}>
-                        <Text style={styles._chips_text}>MAGA</Text>
-                    </TouchableOpacity>
-                </View>
-
-                {/* <<<<<<<<<<  4 >>>>>>>>>>>.*/}
-                <View style={styles._chips_main}>
-                    <TouchableOpacity style={styles._chips2}>
-                        <Text style={styles._chips_text3}>Back the blue</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles._chips}>
-                        <Text style={styles._chips_text4}>Self - reliance</Text>
-                    </TouchableOpacity>
-                </View>
-
-                {/* <<<<<<<<<<  5 >>>>>>>>>>>.*/}
-                <View style={styles._chips_main}>
-                    <TouchableOpacity style={styles._chips}>
-                        <Text style={styles._chips_text}>USA</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles._chips2}>
-                        <Text style={styles._chips_text2}>Humility</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles._chips}>
-                        <Text style={styles._chips_text}>Capitalism</Text>
-                    </TouchableOpacity>
-                </View>
-
                 {/* <<<<<<<<<<  6 >>>>>>>>>>>.*/}
                 <View style={styles._chips_main}>
                     <TouchableOpacity style={styles._chips}>
@@ -186,29 +123,19 @@ const Moreinterest = (props) => {
                         <Text style={styles._chips_text5}>Indivisalism</Text>
                     </TouchableOpacity>
                 </View>
-
-                {/* <<<<<<<<<<  7 >>>>>>>>>>>.*/}
                 <View style={styles._chips_main}>
                     <TouchableOpacity style={styles._chips}>
-                        <Text style={styles._chips_text5}>Constitution</Text>
+                        <Text style={styles._chips_text5}>Free  market</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles._chips}>
-                        <Text style={styles._chips_text4}>Support Troops</Text>
+                        <Text style={styles._chips_text5}>Indivisalism</Text>
                     </TouchableOpacity>
                 </View>
 
-
-                {/* <<<<<<<<<<  8 >>>>>>>>>>>.*/}
-                <View style={styles._chips_main}>
-                    <TouchableOpacity style={styles._chips}>
-                        <Text style={styles._chips_text}>Respect</Text>
-                    </TouchableOpacity>
-                </View>
-
-
-
-
-                {/* <<<<<<<< Add Photos <<<<<<<< */}
+<TouchableOpacity>
+    <Text style={{fontSize:14,color:"#003D0D",fontWeight:"bold",marginTop:10}}>Add more interest</Text>
+</TouchableOpacity>
+            {/* <<<<<<<< Add Photos <<<<<<<< */}
                 <Text style={styles._gender}>Add Photos</Text>
                 <View style={styles._add_photos_main}>
                     <View>
@@ -218,7 +145,7 @@ const Moreinterest = (props) => {
                             onPress={() => openGallert()}
                         >
 
-                            <Ionicons name="md-add-circle" size={24} color="#CA2C30" />
+                            <Ionicons name="md-add-circle" size={24} color="#03F435" />
                         </TouchableOpacity>
                     </View>
                     <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
@@ -241,14 +168,14 @@ const Moreinterest = (props) => {
 
                 {/* <<<<<<<< Continue button >>>>>>>>> */}
                 <TouchableOpacity style={styles.button}
-                    onPress={() => props.navigation.navigate("Agree")}
+                    onPress={() => props.navigation.navigate("Home")}
                 >
                     <LinearGradient
                         // Button Linear Gradient
                         end={[1.0, 0.5]}
                         start={[0.0, 0.5]}
                         locations={[0.0, 1.0]}
-                        colors={['#BD2B31', '#2B439E']}
+                        colors={['#006F01', '#00F710']}
                         style={{ alignItems: 'center', borderRadius: 5, borderRadius: 50 }}>
                         <Text style={styles._button_txt}>Continue</Text>
                     </LinearGradient>
@@ -269,10 +196,10 @@ const styles = StyleSheet.create({
         backgroundColor: "white"
     },
     _logo: {
-        width: 200,
-        height: 40,
+        width: 138,
+        height: 53,
         alignSelf: "center",
-        marginTop: 60,
+        marginTop: 40,
         marginBottom: 50
     },
 
@@ -305,16 +232,16 @@ const styles = StyleSheet.create({
         marginTop: 30
     },
     _name_main: {
-        borderColor: "#CA2C30",
-        borderWidth: 1,
+        borderColor: "#03F435",
+        borderWidth: 2,
         borderRadius: 5,
         padding: 5,
         marginTop: 20
 
     },
     _birthday_main: {
-        borderColor: "#CA2C30",
-        borderWidth: 1,
+        borderColor: "#03F435",
+        borderWidth: 2,
         borderRadius: 5,
         padding: 15,
         marginTop: 20,
@@ -322,8 +249,8 @@ const styles = StyleSheet.create({
 
     },
     _location_main: {
-        borderColor: "#CA2C30",
-        borderWidth: 1,
+        borderColor: "#03F435",
+        borderWidth: 2,
         borderRadius: 5,
         paddingBottom: 10,
         paddingRight: 5,
@@ -336,15 +263,16 @@ const styles = StyleSheet.create({
     },
     _name_input: {
         padding: 5,
-        fontWeight: "bold"
+        fontWeight: "bold",
+        color:"#000000"
     },
     _location: {
-        color: "#2545A3",
+        color: "#000000",
         fontWeight: "bold",
         fontSize: 15
     },
     _gender: {
-        color: "#2545A3",
+        color: "#595B59",
         fontWeight: "bold",
         fontSize: 18,
         marginTop: 20,
@@ -353,64 +281,22 @@ const styles = StyleSheet.create({
     },
     _chips: {
         borderRadius: 15,
-        borderColor: "#CA2C30",
+        borderColor: "#03F435",
         borderWidth: 1,
         // width: "30%"
     },
-    _chips2: {
-        borderRadius: 15,
-        borderColor: "#30439B",
-        borderWidth: 1,
-        // width: "30%"
-    },
+
     _chips_main: {
         flexDirection: "row",
         justifyContent: "space-between",
         alignItems: "center",
         marginTop: 10
     },
-    _chips_text: {
-        color: "#CA2C30",
-        paddingBottom: 5,
-        paddingLeft: 20,
-        paddingRight: 20,
-        paddingTop: 5,
-        fontWeight: "bold",
-        fontSize: 15,
-        textAlign: "center"
-    },
-    _chips_text2: {
-        color: "#30439B",
-        paddingBottom: 5,
-        paddingLeft: 20,
-        paddingRight: 20,
-        paddingTop: 5,
-        fontWeight: "bold",
-        fontSize: 15,
-        textAlign: "center"
-    },
-    _chips_text3: {
-        color: "#30439B",
-        paddingBottom: 5,
-        paddingLeft: 30,
-        paddingRight: 30,
-        paddingTop: 5,
-        fontWeight: "bold",
-        fontSize: 15,
-        textAlign: "center"
-    },
-    _chips_text4: {
-        color: "#CA2C30",
-        paddingBottom: 5,
-        paddingLeft: 25,
-        paddingRight: 25,
-        paddingTop: 5,
-        fontWeight: "bold",
-        fontSize: 15,
-        textAlign: "center"
-    },
+
+ 
+
     _chips_text5: {
-        color: "#CA2C30",
+        color: "#03F435",
         paddingBottom: 5,
         paddingLeft: 30,
         paddingRight: 30,
@@ -433,7 +319,7 @@ const styles = StyleSheet.create({
         width: 85,
         height: 94,
         borderWidth: 1,
-        borderColor: "#CA2C30",
+        borderColor: "#03F435",
         borderRadius: 5,
         margin: 5
     },

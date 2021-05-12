@@ -41,7 +41,7 @@ export default class App extends React.Component {
         showMe: false
       })
     },
-      1000)
+      0)
     this.setState({ isReady: true });
   }
 

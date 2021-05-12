@@ -5,7 +5,7 @@ import Tab2 from './like';
 export default class TabsAdvancedExample extends Component {
     render() {
         return (
-            <Tabs tabBarUnderlineStyle={{ backgroundColor: "white",  alignSelf: "center", height: 6 }}  >
+            <Tabs tabBarUnderlineStyle={{ backgroundColor: "#2DFD56",  alignSelf: "center", height: 6 }}  >
 
                 <Tab heading="Photos" tabStyle={{ backgroundColor: 'white', width: 50 }} textStyle={{ color: 'gray' }} activeTabStyle={{ backgroundColor: 'white' }} activeTextStyle={{ color: '#30439B', fontWeight: 'bold' }}>
             <Tab1 />

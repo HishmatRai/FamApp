@@ -5,7 +5,6 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Login from './../screens/login'
-import Agree from './../screens/agree'
 import Setting from './../screens/setting'
 import Editinfo from './../screens/edit_info'
 import Explore from './../screens/explore'
@@ -21,8 +20,10 @@ import Message from './../screens/message'
 import Notification from './../screens/notification'
 import Vodeocall from './../screens/videocall'
 import AudioCall from './../screens/audiocall'
-import lastMatches from './../screens/last_matches'
-import Camera from './../screens/camera'
+import Camera from './../screens/camera';
+import CountyCode from './../screens/CountyCode';
+import OTPVerification from './../screens/OTPVerification';
+import ResetPassword from './../screens/ResetPassword'
 const Tab = createBottomTabNavigator();
 function BottomNavigation() {
   return (
@@ -33,14 +34,14 @@ function BottomNavigation() {
 
           if (route.name === 'EXPLORE') {
             iconName = focused
-              ? <MaterialIcons name="dashboard" size={24} color="red" />
-              : <MaterialIcons name="dashboard" size={24} color="black" />;
+              ? <MaterialIcons name="dashboard" size={24} color="#03F435" />
+              : <MaterialIcons name="dashboard" size={24} color="#707070" />;
           } else if (route.name === 'FAVOURITE') {
-            iconName = focused ? <Ionicons name="md-heart" size={24} color="red" /> : <Ionicons name="md-heart" size={24} color="black" />;
+            iconName = focused ? <Ionicons name="md-heart" size={24} color="#03F435" /> : <Ionicons name="md-heart" size={24} color="#707070" />;
           } else if (route.name === 'CHAT') {
-            iconName = focused ? <Ionicons name="ios-chatbubbles" size={24} color="red" /> : <Ionicons name="ios-chatbubbles" size={24} color="black" />;
+            iconName = focused ? <Ionicons name="ios-chatbubbles" size={24} color="#03F435" /> : <Ionicons name="ios-chatbubbles" size={24} color="#707070" />;
           } else if (route.name === 'PROFILE') {
-            iconName = focused ? <FontAwesome name="user" size={24} color="red" /> : <FontAwesome name="user" size={24} color="black" />;
+            iconName = focused ? <FontAwesome name="user" size={24} color="#03F435" /> : <FontAwesome name="user" size={24} color="#707070" />;
           }
 
           // You can return any component that you like here!
@@ -48,8 +49,8 @@ function BottomNavigation() {
         },
       })}
       tabBarOptions={{
-        activeTintColor: 'tomato',
-        inactiveTintColor: 'gray',
+        activeTintColor: '#03F435',
+        inactiveTintColor: '#707070',
       }}>
       <Tab.Screen name="EXPLORE" component={Explore} />
       <Tab.Screen name="FAVOURITE" component={Favourite} />
@@ -64,8 +65,10 @@ function Navigation() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        <Stack.Screen name="CountyCode" component={CountyCode} options={{ headerShown: false }} />
+        <Stack.Screen name="OTPVerification" component={OTPVerification} options={{ headerShown: false }} />
         <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
-        <Stack.Screen name="Agree" component={Agree} options={{ headerShown: false }} />
+        <Stack.Screen name="ResetPassword" component={ResetPassword} options={{ headerShown: false }} />
         <Stack.Screen name="Setting" component={Setting} options={{ headerShown: false }} />
         <Stack.Screen name="Editinfo" component={Editinfo} options={{ headerShown: false }} />
         <Stack.Screen name="Continue" component={Continue} options={{ headerShown: false }} />
@@ -75,7 +78,6 @@ function Navigation() {
         <Stack.Screen name="Vodeocall" component={Vodeocall} options={{ headerShown: false }} />
         <Stack.Screen name="AudioCall" component={AudioCall} options={{ headerShown: false }} />
         <Stack.Screen name="Camera" component={Camera} options={{ headerShown: false }} />
-        <Stack.Screen name="lastMatches" component={lastMatches} options={{ headerShown: false }} />
         <Stack.Screen name="Home" component={BottomNavigation} options={{ headerShown: false }} />
 
       </Stack.Navigator>

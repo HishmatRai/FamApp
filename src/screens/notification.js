@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
 
     },
     match: {
-        color: "#CA2C30",
+        color: "#007719",
         fontSize: 35,
         textAlign: "center"
     },
@@ -73,12 +73,12 @@ const styles = StyleSheet.create({
         marginTop: 30
     },
     _conversation: {
-        color: "#30439B",
+        color: "#004707",
         fontSize: 18,
         textAlign: "center"
     },
     _send_message_button: {
-        backgroundColor: "#CA2C30",
+        backgroundColor: "#03F435",
         borderRadius: 20,
         marginTop: 20,
         alignItems: "center"
@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
         paddingBottom: 10
     },
     _keep_looking_button: {
-        backgroundColor: "#30439B",
+        backgroundColor: "#03F435",
         borderRadius: 20,
         marginTop: 20,
         alignItems: "center"

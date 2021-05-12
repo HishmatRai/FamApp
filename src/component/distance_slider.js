@@ -22,10 +22,10 @@ export default class DistanceSlider extends React.Component {
           step={1}
           thumbStyle={styles.thumbStyle}
           trackStyle={styles.trackStyle}
-          maximumTrackTintColor="#707070"
-          minimumTrackTintColor="#30439B"
-          thumbTintColor="#707070"
-          thumbImage={<Ionicons name="ios-menu" size={24} color="black" />}
+          maximumTrackTintColor="#2DFD56"
+          minimumTrackTintColor="#2DFD56"
+          thumbTintColor="#2DFD56"
+          thumbImage={<Ionicons name="ios-menu" size={24} color="#2DFD56" />}
           value={this.state.value}
           onValueChange={(value) => this.setState({ value })} />
         <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
@@ -46,12 +46,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   thumbStyle: {
-    backgroundColor: '#30439B',
+    backgroundColor: '#2DFD56',
     height: 16,
     width: 40
   },
   trackStyle: {
-    backgroundColor: "#707070"
+    backgroundColor: "#2DFD56"
   },
   _value: {
     color: "gray"

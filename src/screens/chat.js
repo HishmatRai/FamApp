@@ -42,13 +42,13 @@ const Chat = (props) => {
         <View style={styles._header_main}>
           <Text style={styles._heading}>Chats</Text>
           <View style={styles._serach_main}>
-            {/* <TextInput
+            <TextInput
               style={styles._serach}
               placeholder="Search"
-            /> */}
-            {/* <TouchableOpacity style={{ marginRight: 10 }}>
-              <FontAwesome5 name="search" size={15} color="#CA2C30" />
-            </TouchableOpacity> */}
+            />
+            <TouchableOpacity style={{ marginRight: 10 }}>
+              <FontAwesome5 name="search" size={15} color="#2DFD56" />
+            </TouchableOpacity>
           </View>
           <Menu
             ref={this.setMenuRef}
@@ -211,7 +211,9 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     borderRadius: 5,
     padding: 2,
-    alignItems: "center"
+    alignItems: "center",
+    borderColor:"#2DFD56",
+    borderWidth:2
   },
   _serach: {
     fontWeight: "bold",

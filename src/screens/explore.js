@@ -9,7 +9,7 @@ import DistanceSlider from './../component/distance_slider'
 import Intrestingbutton from './../component/interested_radio_button'
 import AgeSlider from './../component/age_slider'
 import Togglebuttom from './../component/togglebutton'
-
+import { LinearGradient } from 'expo-linear-gradient';
 const window = Dimensions.get("window");
 const screen = Dimensions.get("screen");
 
@@ -35,19 +35,19 @@ const Explore = (props) => {
         <View style={styles._header_main}>
           <TouchableOpacity
             onPress={() => props.navigation.navigate("Notification")}>
-            <Ionicons name="ios-notifications" size={24} color="#ED3030" />
+            <Ionicons name="ios-notifications" size={24} color="#002603" />
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => this.RBSheet.open()}
           >
-            <MaterialCommunityIcons name="filter-variant" size={24} color="#ED3030" />
+            <MaterialCommunityIcons name="filter-variant" size={24} color="#002603" />
           </TouchableOpacity>
 
         </View>
         <ScrollView showsVerticalScrollIndicator={false}>
 
           {/* images */}
-          <View style={styles._image_main_view}>
+          {/* <View style={styles._image_main_view}>
             <View style={styles._image_main}>
               <Image source={require('./../../assets/explore1.png')} style={styles._profile_images} />
             </View>
@@ -63,7 +63,7 @@ const Explore = (props) => {
             <View style={styles._image_main}>
               <Image source={require('./../../assets/explore1.png')} style={styles._profile_images} />
             </View>
-          </View>
+          </View> */}
 
           {/* large image */}
           <Slider path={props} />
@@ -92,7 +92,7 @@ const Explore = (props) => {
             {/* <<<<<<<<<<<<<<<<<<<<<<< Filter >>>>>>>>>>>>>>>>>>>>> */}
             <View style={styles._bottm_sheet_main}>
               <TouchableOpacity
-                onPress={() => alert("dfdfd")}
+                
               >
                 <Entypo name="cross" size={24} color="black" />
               </TouchableOpacity>
@@ -118,8 +118,8 @@ const Explore = (props) => {
               <View style={styles._bottm_sheet_main3}>
                 <Text style={styles._location}>Distance</Text>
                 <TouchableOpacity style={{ flexDirection: "row" }}>
-                  {/* <Entypo name="chevron-small-left" size={24} color="black" /> */}
-                  {/* <Text style={styles._reset}>3 mi</Text> */}
+                  <Entypo name="chevron-small-left" size={24} color="black" />
+                  <Text style={styles._reset}>3 mi</Text>
                 </TouchableOpacity>
               </View>
               <DistanceSlider />
@@ -129,7 +129,7 @@ const Explore = (props) => {
               <View style={styles._bottm_sheet_main3}>
                 <Text style={styles._location}>Interested in</Text>
                 <TouchableOpacity style={{ flexDirection: "row" }}>
-                  <Text style={styles._reset}>Woman</Text>
+                  <Text style={styles._reset}>Female</Text>
                   <Entypo name="chevron-small-right" size={24} color="black" />
                 </TouchableOpacity>
               </View>
@@ -170,7 +170,17 @@ const Explore = (props) => {
             <TouchableOpacity style={styles._done_button}
             // onPress={() => props.navigation.navigate("Home")}
             >
-              <Text style={styles._done_button_text}>Done</Text>
+
+              <LinearGradient
+                                // Button Linear Gradient
+                                end={[1.0, 0.5]}
+                                start={[0.0, 0.5]}
+                                locations={[0.0, 1.0]}
+                                colors={['#006F01', '#00F710']}
+                                style={{ alignItems: 'center', borderRadius: 5, borderRadius: 50 }}>
+
+<Text style={styles._done_button_text}>Done</Text>
+                            </LinearGradient>
             </TouchableOpacity>
           </View>
           <View style={{ marginBottom: 40 }}></View>
@@ -242,7 +252,7 @@ const styles = StyleSheet.create({
   _location: {
     fontWeight: "bold",
     fontSize: 17,
-    color: "#CA2C30"
+    color: "#00841A"
   },
   _bottm_sheet_main3: {
     flexDirection: "row",
@@ -257,7 +267,7 @@ const styles = StyleSheet.create({
     marginTop: 20
   },
   _done_button: {
-    backgroundColor: "#CA2C30",
+    // backgroundColor: "#CA2C30",
     borderRadius: 10,
     width: "50%",
     alignSelf: "center",

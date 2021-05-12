@@ -34,7 +34,7 @@ export default class Imageslider extends React.Component {
                 />
                 <View
                     style={{
-                        backgroundColor: "#F8F8F8",
+                        backgroundColor: "#ADF9B2",
                         marginHorizontal: 10,
                         marginVertical: 40,
                         paddingBottom: 30,

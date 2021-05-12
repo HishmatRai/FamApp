@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { View, StyleSheet, Text, Dimensions, ImageBackground, TouchableOpacity, ScrollView, Image ,StatusBar} from "react-native";
-import { TextInput } from 'react-native-paper';
+import { View, StyleSheet, Text, Dimensions, ImageBackground, TouchableOpacity, ScrollView, Image, StatusBar, TextInput } from "react-native";
 import { Entypo } from '@expo/vector-icons';
 import { Fontisto } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
@@ -26,37 +25,30 @@ const Login = (props) => {
 
     return (
         <View style={styles.container}>
-<StatusBar barStyle="dark-content" hidden={true} backgroundColor="white" translucent={true} />
+            <StatusBar barStyle="dark-content" hidden={true} backgroundColor="white" translucent={true} />
             <ImageBackground source={require('./../../assets/login_background.png')} style={styles._image}>
                 <View style={{ margin: 20 }}>
-                    <ScrollView style={styles.scrollView}>
-                        <Image source={require('./../../assets/updated_logo.png')} style={styles._logo} />
-
+                    <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
+                        <Image source={require('./../../assets/logo.png')} style={styles._logo} />
                         <Text style={styles._heading}>Login</Text>
-                        {/* <<<<<<<< Email >>>>>>>>> */}
+
                         <TextInput
-                            label="Email Address / Phone number"
-                            value={text}
-                            onChangeText={text => setText(text)}
+                            placeholder="Phone number"
                             style={styles._input}
-                            underlineColor="#545151"
-                            placeholderTextColor="red"
+                            underlineColor="#3CCF5B"
+                            placeholderTextColor="#3CCF5B"
+                            keyboardType={"numeric"}
                         />
-
-                        {/* <<<<<<<< Password >>>>>>>>> */}
+                        
                         <TextInput
-                            label="Password"
-                            value={text2}
-                            onChangeText={text2 => setText2(text2)}
+                            placeholder="Password"
                             style={styles._input}
-                            underlineColor="#545151"
-                            secureTextEntry={true}
-                            color="green"
-
+                            underlineColor="#3CCF5B"
+                            placeholderTextColor="#3CCF5B"
+                           secureTextEntry={true}
                         />
-
                         {/* <<<<<<<< Forgot Password >>>>>>>>> */}
-                        <TouchableOpacity style={styles._forgot_password_button}>
+                        <TouchableOpacity style={styles._forgot_password_button} onPress={() => props.navigation.navigate("ResetPassword")}>
                             <Text style={styles._forgot_password_button_text}>Forgot Password?</Text>
                         </TouchableOpacity>
 
@@ -71,28 +63,13 @@ const Login = (props) => {
                                 end={[1.0, 0.5]}
                                 start={[0.0, 0.5]}
                                 locations={[0.0, 1.0]}
-                                colors={['#BD2B31', '#2B439E']}
+                                colors={['#006F01', '#00F710']}
                                 style={{ alignItems: 'center', borderRadius: 5, borderRadius: 50 }}>
 
                                 <Text style={styles._button_txt}>Login</Text>
                             </LinearGradient>
                         </TouchableOpacity>
 
-                        {/* <<<<<<<< Social Button >>>>>>>>> */}
-                        <View style={styles._socail_login_main}>
-                            <TouchableOpacity style={styles._facebook_icon}>
-                                <Fontisto name="facebook" size={24} color="white" />
-                            </TouchableOpacity>
-                            <TouchableOpacity style={styles._google_icon}>
-                                <AntDesign name="google" size={24} color="white" />
-                            </TouchableOpacity>
-                            <TouchableOpacity style={styles._twitter_icon}>
-                                <AntDesign name="twitter" size={24} color="white" />
-                            </TouchableOpacity>
-                            <TouchableOpacity style={styles._linkiden_icon}>
-                                <Entypo name="linkedin" size={24} color="white" />
-                            </TouchableOpacity>
-                        </View>
 
                         {/* <<<<<<<< Term of services >>>>>>>>> */}
                         <Text style={styles._term_services}>By using this app you agree with the terms of services</Text>
@@ -133,33 +110,44 @@ const styles = StyleSheet.create({
         height: "100%"
     },
     _logo: {
-        width: 269,
-        height: 56,
+        width: 100,
+        height: 135,
         alignSelf: "center",
         marginTop: 50
     },
     _heading: {
-        color: "#2545A3",
+        color: "#000000",
         fontWeight: "bold",
         fontSize: 28,
         fontFamily: "MontserratExtraLight",
-        marginTop: 30
+        marginTop: 30,
+        width: "90%",
+        alignSelf: "center",
+        marginBottom:20
 
     },
     _input: {
-        backgroundColor: "transparent",
+        width: "90%",
+        alignSelf: "center",
+        color:"#03F435",
+        borderBottomWidth:3,
+        borderBottomColor:"#03F435",
+       paddingBottom:10,
+       fontSize:15,
+       marginTop:10,
+       marginBottom:10
     },
     _forgot_password_button: {
         alignSelf: "flex-end",
         marginTop: 10
     },
     _forgot_password_button_text: {
-        color: "white",
+        color: "#00A723",
         fontSize: 15,
         fontFamily: "MontserratExtraLight",
         fontWeight: "bold",
-        borderBottomColor: "white",
-        borderBottomWidth: 1
+        borderBottomColor: "#00A723",
+        borderBottomWidth: 3
     },
     button: {
         // backgroundColor: "green",
@@ -170,57 +158,17 @@ const styles = StyleSheet.create({
     },
     _button_txt: {
         fontWeight: "bold",
-        paddingTop: 10,
-        paddingBottom: 10,
+        paddingTop: 15,
+        paddingBottom: 15,
         textAlign: "center",
         color: "white",
         fontSize: 18,
         fontFamily: "MontserratSemiBold"
     },
-    _socail_login_main: {
-        flexDirection: "row",
-        width: "70%",
-        alignSelf: "center",
-        justifyContent: "space-between",
-        marginTop: 30
-    },
-    _facebook_icon: {
-        borderRadius: 100,
-        height: 50,
-        width: 50,
-        backgroundColor: "#3B5998",
-        alignItems: "center",
-        justifyContent: "center"
-    },
-    _google_icon: {
-        borderRadius: 100,
-        height: 50,
-        width: 50,
-        backgroundColor: "#DD4B39",
-        alignItems: "center",
-        justifyContent: "center",
-
-    },
-    _twitter_icon: {
-        borderRadius: 100,
-        height: 50,
-        width: 50,
-        backgroundColor: "#55ACEE",
-        alignItems: "center",
-        justifyContent: "center"
-    },
-    _linkiden_icon: {
-        borderRadius: 100,
-        height: 50,
-        width: 50,
-        backgroundColor: "#007AB9",
-        alignItems: "center",
-        justifyContent: "center"
-    },
     _term_services: {
-        color: "white",
-        borderBottomWidth: 1,
-        borderBottomColor: "white",
+        color: "#000000",
+        borderBottomWidth: 2,
+        borderBottomColor: "#000000",
         marginTop: 20,
         fontSize: 14,
         fontFamily: "MontserratSemiBold",
@@ -232,7 +180,7 @@ const styles = StyleSheet.create({
         marginTop: 30
     },
     _new_user: {
-        color: "white",
+        color: "#00A723",
         fontWeight: "bold",
         fontFamily: "MontserratSemiBold",
         fontSize: 16
@@ -240,7 +188,7 @@ const styles = StyleSheet.create({
     _register: {
         fontFamily: "MontserratSemiBold",
         fontSize: 16,
-        color: "#DA2D30"
+        color: "#DD4B39"
 
     },
     _line: {

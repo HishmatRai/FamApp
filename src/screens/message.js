@@ -74,15 +74,15 @@ const Message = (props) => {
                         <TouchableOpacity
                             onPress={() => props.navigation.navigate("AudioCall")}>
 
-                            <Ionicons name="ios-call" size={24} color="#CA2C30" />
+                            <Ionicons name="ios-call" size={24} color="#00841A" />
                         </TouchableOpacity>
                         <TouchableOpacity
                             onPress={() => props.navigation.navigate("Vodeocall")}>
-                            <FontAwesome5 name="video" size={22} color="#CA2C30" />
+                            <FontAwesome5 name="video" size={22} color="#00841A" />
                         </TouchableOpacity>
                         <Menu
                             ref={this.setMenuRef}
-                            button={<Feather onPress={this.showMenu} name="more-vertical" size={24} color="#CA2C30" />}
+                            button={<Feather onPress={this.showMenu} name="more-vertical" size={24} color="#00841A" />}
                         >
                             <MenuItem onPress={this.hideMenu}>Delete Conversation</MenuItem>
                             <MenuItem onPress={this.hideMenu}>Block User</MenuItem>
@@ -99,7 +99,7 @@ const Message = (props) => {
                         </View>
                         <View style={{ flexDirection: "row", alignItems: "center", width: "80%" }}>
                             <Image source={require('./../../assets/first_messge_receive.png')} style={{ width: 17, height: 17 }} />
-                            <Text style={styles.first_messge_receive}>fsdfdsfdfds</Text>
+                            <Text style={styles.first_messge_receive}>Hi how r u?</Text>
                         </View>
                     </View>
                     {/*<<<<<<<<<<<<<<<<<<<<<< user 2nd message receive >>>>>>>>>>>>>>> */}
@@ -200,14 +200,14 @@ const Message = (props) => {
 
                 <TouchableOpacity
                     onPress={() => props.navigation.navigate("Camera")}>
-                    <Entypo name="camera" size={24} color="#30439B" style={{ marginLeft: 40 }} />
+                    <Entypo name="camera" size={24} color="#00841A" style={{ marginLeft: 40 }} />
                 </TouchableOpacity>
                 <TouchableOpacity
                     onPress={() => openGallert()}>
-                    <Ionicons name="ios-attach" size={24} color="#30439B" />
+                    <Ionicons name="ios-attach" size={24} color="#00841A" />
                 </TouchableOpacity>
                 <TouchableOpacity>
-                    <Ionicons name="md-send" size={30} color="#30439B" style={{ marginRight: 10 }} />
+                    <Ionicons name="md-send" size={30} color="#00841A" style={{ marginRight: 10 }} />
                 </TouchableOpacity>
             </View>
         </View>
@@ -277,7 +277,7 @@ const styles = StyleSheet.create({
 
     },
     first_messge_receive: {
-        backgroundColor: "#CA2C30",
+        backgroundColor: "#00841A",
         borderRadius: 100,
         paddingRight: 20,
         paddingLeft: 20,
@@ -289,7 +289,7 @@ const styles = StyleSheet.create({
         fontSize: 16
     },
     first_messge_sent: {
-        backgroundColor: "#30439B",
+        backgroundColor: "#2DFD56",
         borderRadius: 100,
         paddingRight: 20,
         paddingLeft: 20,

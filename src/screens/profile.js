@@ -48,7 +48,7 @@ const Profile = (props) => {
                     <TouchableOpacity
                         onPress={() => props.navigation.goBack()}
                     >
-                        <Ionicons name="ios-arrow-back" size={24} color="#CA2C30" />
+                        <Ionicons name="ios-arrow-back" size={24} color="#00841A" />
                     </TouchableOpacity>
                     <Text style={styles._heading}>Profile</Text>
                 </View>
@@ -71,7 +71,7 @@ const Profile = (props) => {
                         <TouchableOpacity style={styles._setting_main}
                             onPress={() => props.navigation.navigate("Setting")}
                         >
-                            <Ionicons name="md-settings" size={34} color="#30439B" />
+                            <Ionicons name="md-settings" size={34} color="#00841A" />
                             <Text style={styles._icons_heading}>Settings</Text>
                         </TouchableOpacity>
 
@@ -84,7 +84,7 @@ const Profile = (props) => {
 
                         <TouchableOpacity style={styles._setting_main}
                             onPress={() => props.navigation.navigate("Editinfo")}>
-                            <FontAwesome name="edit" size={34} color="#30439B" />
+                            <FontAwesome name="edit" size={34} color="#00841A" />
                             <Text style={styles._icons_heading}>Edit Info</Text>
                         </TouchableOpacity>
                     </View>
@@ -114,18 +114,18 @@ const Profile = (props) => {
                             <Text style={styles._subscription}>Likes</Text>
                         </View>
 
-                        {/* <View style={styles._sub_main}>
+                        <View style={styles._sub_main}>
                             <MaterialCommunityIcons name="email-outline" size={20} color="gray" />
                             <Text style={styles._counter}>38</Text>
                             <Text style={styles._subscription}>Likes</Text>
-                        </View> */}
+                        </View>
 
-                        {/* <View style={styles._sub_main}>
+                        <View style={styles._sub_main}>
                             <Ionicons name="ios-information-circle-outline" size={24} color="gray" />
                             <TouchableOpacity>
                                 <Text style={styles._more_information_button_text}>More Information</Text>
                             </TouchableOpacity>
-                        </View> */}
+                        </View>
                     </View>
                 </View>
 
@@ -136,10 +136,9 @@ const Profile = (props) => {
                 <View style={{ margin: 20 }}>
                     <View style={{ flexDirection: "row", justifyContent: "space-between", marginLeft: 20, marginRight: 20 }}>
                         <Text style={styles._last_matches}>Last Matches</Text>
-                        {/* <TouchableOpacity
-                            onPress={() => props.navigation.navigate("lastMatches")}>
+                        <TouchableOpacity>
                             <Text style={styles._more_information_button_text}>View All</Text>
-                        </TouchableOpacity> */}
+                        </TouchableOpacity>
                     </View>
 
                     <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>

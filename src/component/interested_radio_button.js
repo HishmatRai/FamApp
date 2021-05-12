@@ -12,33 +12,33 @@ const IntrestedRadio = () => {
                     value="first"
                     status={checked === 'first' ? 'checked' : 'unchecked'}
                     onPress={() => setChecked('first')}
-                    uncheckedColor="#30439B"
-                    color="#30439B"
+                    uncheckedColor="#00841A"
+                    color="#00841A"
                 />
-                <Text style={styles._select_text}>Man</Text>
+                <Text style={styles._select_text}>Dating</Text>
             </View>
-            <View style={styles._select_gender2}>
+            <View style={styles._select_gender}>
                 <RadioButton
                     value="second"
                     status={checked === 'second' ? 'checked' : 'unchecked'}
                     onPress={() => setChecked('second')}
-                    uncheckedColor="#30439B"
-                    color="#30439B"
+                    uncheckedColor="#00841A"
+                    color="#00841A"
 
                 />
-                <Text style={styles._select_text}>Woman</Text>
+                <Text style={styles._select_text}>Friendship</Text>
             </View>
-            {/* <View style={styles._select_gender2}>
+            <View style={styles._select_gender}>
                 <RadioButton
                     value="third"
                     status={checked === 'third' ? 'checked' : 'unchecked'}
                     onPress={() => setChecked('third')}
-                    uncheckedColor="#30439B"
-                    color="#30439B"
+                    uncheckedColor="#00841A"
+                    color="#00841A"
 
                 />
                 <Text style={styles._select_text}>Business</Text>
-            </View> */}
+            </View>
 
         </View>
     );
@@ -60,8 +60,8 @@ const styles = StyleSheet.create({
         // marginRight: 50,
     },
     _select_text: {
-        color: "gray",
-        fontSize: 16
+        color: "#000000",
+        fontSize: 14
     }
 })
 

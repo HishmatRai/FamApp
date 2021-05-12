@@ -12,8 +12,8 @@ const MyComponent = () => {
                     value="first"
                     status={checked === 'first' ? 'checked' : 'unchecked'}
                     onPress={() => setChecked('first')}
-                    uncheckedColor="red"
-                    color="red"
+                    uncheckedColor="#04821F"
+                    color="#04821F"
                 />
                 <Text style={styles._select_text}>Man</Text>
             </View>
@@ -22,8 +22,8 @@ const MyComponent = () => {
                     value="second"
                     status={checked === 'second' ? 'checked' : 'unchecked'}
                     onPress={() => setChecked('second')}
-                    uncheckedColor="red"
-                    color="red"
+                    uncheckedColor="#04821F"
+                    color="#04821F"
 
                 />
                 <Text style={styles._select_text}>Women</Text>
@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
         marginRight: 50,
     },
     _select_text: {
-        color: "gray",
+        color: "#04821F",
         fontWeight: "bold",
         fontSize: 16
     }

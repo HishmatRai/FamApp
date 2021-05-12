@@ -11,7 +11,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import Intrestingbutton from './../component/interested_radio_button'
 import Togglebuttom from './../component/togglebutton'
 import Menu, { MenuItem, MenuDivider } from 'react-native-material-menu';
-
+import { LinearGradient } from 'expo-linear-gradient';
 class Favourite extends React.Component {
   _menu = null;
 
@@ -41,15 +41,15 @@ class Favourite extends React.Component {
               <TouchableOpacity
                 onPress={() => this.RBSheet.open()}
               >
-                <MaterialCommunityIcons name="filter-variant" size={24} color="#ED3030" />
+                <MaterialCommunityIcons name="filter-variant" size={24} color="#006B15" />
               </TouchableOpacity>
               <Menu
-            ref={this.setMenuRef}
-            button={<Feather onPress={this.showMenu} name="more-vertical" size={24} color="#ED3030" />}
-          >
-            <MenuItem onPress={this.hideMenu}>Delete Chat</MenuItem>
-            <MenuItem onPress={this.hideMenu}>Block User</MenuItem>
-          </Menu>
+                ref={this.setMenuRef}
+                button={<Feather onPress={this.showMenu} name="more-vertical" size={24} color="#006B15" />}
+              >
+                <MenuItem onPress={this.hideMenu}>Delete Chat</MenuItem>
+                <MenuItem onPress={this.hideMenu}>Block User</MenuItem>
+              </Menu>
             </View>
           </View>
 
@@ -162,7 +162,7 @@ class Favourite extends React.Component {
               {/* <<<<<<<<<<<<<<<<<<<<<<< Filter >>>>>>>>>>>>>>>>>>>>> */}
               <View style={styles._bottm_sheet_main}>
                 <TouchableOpacity
-                  onPress={() => alert("dfdfd")}
+
                 >
                   <Entypo name="cross" size={24} color="black" />
                 </TouchableOpacity>
@@ -199,7 +199,7 @@ class Favourite extends React.Component {
                 <View style={styles._bottm_sheet_main3}>
                   <Text style={styles._location}>Interested in</Text>
                   <TouchableOpacity style={{ flexDirection: "row" }}>
-                    <Text style={styles._reset}>Woman</Text>
+                    <Text style={styles._reset}>Female</Text>
                     <Entypo name="chevron-small-right" size={24} color="black" />
                   </TouchableOpacity>
                 </View>
@@ -239,6 +239,16 @@ class Favourite extends React.Component {
 
               <TouchableOpacity style={styles._done_button}>
                 <Text style={styles._done_button_text}>Done</Text>
+                <LinearGradient
+                  // Button Linear Gradient
+                  end={[1.0, 0.5]}
+                  start={[0.0, 0.5]}
+                  locations={[0.0, 1.0]}
+                  colors={['#006F01', '#00F710']}
+                  style={{ alignItems: 'center', borderRadius: 5, borderRadius: 50 }}>
+
+                  <Text style={styles._done_button_text}>Done</Text>
+                </LinearGradient>
               </TouchableOpacity>
             </View>
             <View style={{ marginBottom: 40 }}></View>
@@ -341,13 +351,12 @@ const styles = StyleSheet.create({
   _location: {
     fontWeight: "bold",
     fontSize: 17,
-    color: "#CA2C30"
+    color: "#00841A"
   },
   _reset: {
     fontSize: 15
   },
   _done_button: {
-    backgroundColor: "#CA2C30",
     borderRadius: 10,
     width: "50%",
     alignSelf: "center",

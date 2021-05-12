@@ -53,12 +53,14 @@ export default class MyDatePicker extends Component {
                     maxDate={moment().format('DD-MM-YYYY')}
                     confirmBtnText="Chọn"
                     cancelBtnText="Hủy"
+            
                     customStyles={{
                         dateInput: {
                             backgroundColor: 'white',
                             borderWidth: 1,
                             borderColor: 'white',
-                            marginLeft:100
+                            marginLeft:100,
+                        
                         },
                     }}
                     onDateChange={(date) => {

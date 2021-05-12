@@ -37,7 +37,7 @@ const EditEnfo = (props) => {
                     <TouchableOpacity
                         style={{ paddingLeft: 5, paddingRight: 5 }}
                         onPress={() => props.navigation.goBack()}>
-                        <Ionicons name="ios-arrow-back" size={20} color="#CA2C30" />
+                        <Ionicons name="ios-arrow-back" size={20} color="#000000" />
                     </TouchableOpacity>
                     <Text style={styles._header_text}>Edit Enfo</Text>
                 </View>
@@ -113,6 +113,13 @@ const EditEnfo = (props) => {
                             placeholder="Add city"
                         />
                     </View>
+                            {/* <<<<<<<<<<<< Account Setting >>>>>>>>>>>> */}
+                            <View style={{ marginTop: 20 }}>
+                        <Text style={styles._heading}>Show My Instagram Photos</Text>
+                        <TouchableOpacity style={styles._mob_number_setting_main}>
+                            <Text style={styles._connect_instagram}>Connect Instagram</Text>
+                        </TouchableOpacity>
+                    </View>
 
                     {/* <<<<<<<<<<<< Gender >>>>>>>>>>>> */}
                     <View style={{ marginTop: 20 }}>
@@ -122,13 +129,7 @@ const EditEnfo = (props) => {
 
 
 
-                    {/* <<<<<<<<<<<< Account Setting >>>>>>>>>>>> */}
-                    {/* <View style={{ marginTop: 20 }}>
-                        <Text style={styles._heading}>Show My Instagram Photos</Text>
-                        <TouchableOpacity style={styles._mob_number_setting_main}>
-                            <Text style={styles._connect_instagram}>Connect Instagram</Text>
-                        </TouchableOpacity>
-                    </View> */}
+            
 
                     {/* <<<<<<<<<<<< Control Your Profile >>>>>>>>>>>> */}
                     <View style={{ marginTop: 20 }}>
@@ -174,7 +175,7 @@ const styles = StyleSheet.create({
     },
     _header_text: {
         fontFamily: "MontserratSemiBold",
-        color: "#CA2C30",
+        color: "#000000",
         marginLeft: 20,
         fontWeight: "bold",
         fontSize: 20,

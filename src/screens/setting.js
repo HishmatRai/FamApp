@@ -7,14 +7,12 @@ import { Ionicons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 import { EvilIcons } from '@expo/vector-icons';
 import ToggleButton from './../component/togglebutton'
+import { LinearGradient } from 'expo-linear-gradient';
 const window = Dimensions.get("window");
 const screen = Dimensions.get("screen");
 
 const Setting = (props) => {
     const [dimensions, setDimensions] = useState({ window, screen });
-    const [modalVisible, setModalVisible] = useState(false);
-    const [modalVisible2, setModalVisible2] = useState(false);
-    const [modalVisible3, setModalVisible3] = useState(false);
 
     const onChange = ({ window, screen }) => {
         setDimensions({ window, screen });
@@ -37,383 +35,13 @@ const Setting = (props) => {
                         style={{ paddingLeft: 5, paddingRight: 5 }}
                         onPress={() => props.navigation.goBack()}
                     >
-                        <Ionicons name="ios-arrow-back" size={20} color="#CA2C30" />
+                        <Ionicons name="ios-arrow-back" size={20} color="#000000" />
                     </TouchableOpacity>
                     <Text style={styles._header_text}>Settings</Text>
                 </View>
 
                 <ScrollView showsVerticalScrollIndicator={false}>
-                    {/* <<<<<<<<<<<<<   Card 1 >>>>>>>>>>>>> */}
-                    <TouchableOpacity style={styles._card1}
-                        onPress={() => {
-                            setModalVisible(true);
-                        }}>
-                        <View style={{ flexDirection: "row" }}>
-                            <Image source={require('./../../assets/updated_logo.png')} style={styles._logo} />
-                            <Text style={styles._premium}> Premium</Text>
-                        </View>
-                        <Text style={styles._premium_des}>Unlock our most exclusicve features</Text>
-                    </TouchableOpacity>
-                    {/* <<<<<<<<<<<<<  model  >>>>>>>>>>>>> */}
 
-                    <Modal
-                        animationType="slide"
-                        transparent={true}
-                        visible={modalVisible}
-                        onRequestClose={() => {
-                            Alert.alert("Modal has been closed.");
-                        }}
-
-                    >
-                        <View style={styles.centeredView}>
-                            <View style={styles.modalView}>
-                                <TouchableOpacity
-                                    style={{ ...styles.openButton, justifyContent: "flex-end", marginTop: -20, marginLeft: "90%" }}
-                                    onPress={() => {
-                                        setModalVisible(!modalVisible);
-                                    }}
-                                >
-                                    <EvilIcons name="close" size={24} color="black" />
-                                </TouchableOpacity>
-                                <View style={{ flexDirection: "row" }}>
-                                    <Image source={require('./../../assets/updated_logo.png')} style={styles._logo} />
-                                    <Text style={styles._premium}> Premium</Text>
-                                </View>
-                                <View style={{ flexDirection: "row" }}>
-                                    <View style={styles._features}>
-                                        <Text style={styles._features_heading}>Features</Text>
-                                    </View>
-                                    <View style={styles._premium_view}>
-                                        <Text style={styles._premium_heading}>Premium</Text>
-                                    </View>
-                                </View>
-                                <View style={{ flexDirection: "row" }}>
-                                    <View style={styles._features}>
-                                        <Text style={styles._features_text}>Swipe Right (24 hrs)</Text>
-                                    </View>
-                                    <View style={styles._premium_view}>
-                                        <Text style={styles._premium_text}>Unlimited</Text>
-                                    </View>
-                                </View>
-                                <View style={{ flexDirection: "row" }}>
-                                    <View style={styles._features}>
-                                        <Text style={styles._features_text}>Shown on top bar</Text>
-                                    </View>
-                                    <View style={styles._premium_view}>
-                                        <Text style={styles._premium_text}>Yes</Text>
-                                    </View>
-                                </View>
-                                <View style={{ flexDirection: "row" }}>
-                                    <View style={styles._features}>
-                                        <Text style={styles._features_text}>See who favourite you</Text>
-                                    </View>
-                                    <View style={styles._premium_view}>
-                                        <Text style={styles._premium_text}>Yes</Text>
-                                    </View>
-                                </View>
-                                <View style={{ flexDirection: "row" }}>
-                                    <View style={styles._features}>
-                                        <Text style={styles._features_text}>See who swiped right on you</Text>
-                                    </View>
-                                    <View style={styles._premium_view}>
-                                        <Text style={styles._premium_text}>Yes and swipe back</Text>
-                                    </View>
-                                </View>
-                                <View style={{ flexDirection: "row" }}>
-                                    <View style={styles._features}>
-                                        <Text style={styles._features_text}>Quick text without match</Text>
-                                    </View>
-                                    <View style={styles._premium_view}>
-                                        <Text style={styles._premium_text}>5 free, then $4.95 (per chat)</Text>
-                                    </View>
-                                </View>
-                                <View style={{ flexDirection: "row" }}>
-                                    <View style={styles._features}>
-                                        <Text style={styles._features_text}>Boost profile (last 2 hrs)</Text>
-                                    </View>
-                                    <View style={styles._premium_view}>
-                                        <Text style={styles._premium_text}>5 free, then $4.95 (each)</Text>
-                                    </View>
-                                </View>
-                                <View style={{ flexDirection: "row" }}>
-                                    <View style={styles._features}>
-                                        <Text style={styles._features_text}>Super like</Text>
-                                    </View>
-                                    <View style={styles._premium_view}>
-                                        <Text style={styles._premium_text}>5 free, then $4.95 (each)</Text>
-                                    </View>
-                                </View>
-                                <View style={{ flexDirection: "row" }}>
-                                    <View style={styles._features}>
-                                        <Text style={styles._features_text}>Ads in app</Text>
-                                    </View>
-                                    <View style={styles._premium_view}>
-                                        <Text style={styles._premium_text}>No ads</Text>
-                                    </View>
-                                </View>
-                                <View style={{ flexDirection: "row" }}>
-                                    <View style={styles._features}>
-                                        <Text style={styles._features_text}>Cost</Text>
-                                    </View>
-                                    <View style={styles._premium_view}>
-                                        <Text style={styles._premium_text}>$19.95 (per month)</Text>
-                                    </View>
-                                </View>
-                                <TouchableOpacity style={styles._continue_button}
-                                //  onPress={() => props.navigation.navigate("Message")}
-                                >
-                                    <Text style={styles._continue_button_text}>Continue</Text>
-                                </TouchableOpacity>
-                            </View>
-                        </View>
-                    </Modal>
-
-
-                    {/* <<<<<<<<<<<<<   Card 2 >>>>>>>>>>>>> */}
-                    <TouchableOpacity style={styles._card1}
-                        onPress={() => {
-                            setModalVisible2(true);
-                        }}>
-                        <View style={{ flexDirection: "row" }}>
-                            <Image source={require('./../../assets/updated_logo.png')} style={styles._logo} />
-                            <AntDesign name="plus" size={24} color="#30439B" />
-                        </View>
-                        <Text style={styles._premium_des}>Unlimited likes & more</Text>
-                    </TouchableOpacity>
-                    {/* <<<<<<<<<<<<<  model  >>>>>>>>>>>>> */}
-
-                    <Modal
-                        animationType="slide"
-                        transparent={true}
-                        visible={modalVisible2}
-                        onRequestClose={() => {
-                            Alert.alert("Modal has been closed.");
-                        }}
-
-                    >
-                        <View style={styles.centeredView}>
-                            <View style={styles.modalView}>
-                                <TouchableOpacity
-                                    style={{ ...styles.openButton, justifyContent: "flex-end", marginTop: -20, marginLeft: "90%" }}
-                                    onPress={() => {
-                                        setModalVisible2(!modalVisible2);
-                                    }}
-                                >
-                                    <EvilIcons name="close" size={24} color="black" />
-                                </TouchableOpacity>
-                                <View style={{ flexDirection: "row" }}>
-                                    <Image source={require('./../../assets/updated_logo.png')} style={styles._logo} />
-                                    <AntDesign name="plus" size={24} color="#30439B" />
-                                </View>
-                                <View style={{ flexDirection: "row" }}>
-                                    <View style={styles._features}>
-                                        <Text style={styles._features_heading}>Features</Text>
-                                    </View>
-                                    <View style={styles._premium_view}>
-                                        <Text style={styles._premium_heading2}>Plus</Text>
-                                    </View>
-                                </View>
-                                <View style={{ flexDirection: "row" }}>
-                                    <View style={styles._features}>
-                                        <Text style={styles._features_text}>Swipe Right (24 hrs)</Text>
-                                    </View>
-                                    <View style={styles._premium_view}>
-                                        <Text style={styles._premium_text}>40</Text>
-                                    </View>
-                                </View>
-                                <View style={{ flexDirection: "row" }}>
-                                    <View style={styles._features}>
-                                        <Text style={styles._features_text}>Shown on top bar</Text>
-                                    </View>
-                                    <View style={styles._premium_view}>
-                                        <Text style={styles._premium_text}>No</Text>
-                                    </View>
-                                </View>
-                                <View style={{ flexDirection: "row" }}>
-                                    <View style={styles._features}>
-                                        <Text style={styles._features_text}>See who favourite you</Text>
-                                    </View>
-                                    <View style={styles._premium_view}>
-                                        <Text style={styles._premium_text}>No</Text>
-                                    </View>
-                                </View>
-                                <View style={{ flexDirection: "row" }}>
-                                    <View style={styles._features}>
-                                        <Text style={styles._features_text}>See who swiped right on you</Text>
-                                    </View>
-                                    <View style={styles._premium_view}>
-                                        <Text style={styles._premium_text}>Yes and swipe back</Text>
-                                    </View>
-                                </View>
-                                <View style={{ flexDirection: "row" }}>
-                                    <View style={styles._features}>
-                                        <Text style={styles._features_text}>Quick text without match</Text>
-                                    </View>
-                                    <View style={styles._premium_view}>
-                                        <Text style={styles._premium_text}>5 free, then $4.95 (per chat)</Text>
-                                    </View>
-                                </View>
-                                <View style={{ flexDirection: "row" }}>
-                                    <View style={styles._features}>
-                                        <Text style={styles._features_text}>Boost profile (last 2 hrs)</Text>
-                                    </View>
-                                    <View style={styles._premium_view}>
-                                        <Text style={styles._premium_text}>5 free, then $4.95 (each)</Text>
-                                    </View>
-                                </View>
-                                <View style={{ flexDirection: "row" }}>
-                                    <View style={styles._features}>
-                                        <Text style={styles._features_text}>Super like</Text>
-                                    </View>
-                                    <View style={styles._premium_view}>
-                                        <Text style={styles._premium_text}>5 free, then $4.95 (each)</Text>
-                                    </View>
-                                </View>
-                                <View style={{ flexDirection: "row" }}>
-                                    <View style={styles._features}>
-                                        <Text style={styles._features_text}>Ads in app</Text>
-                                    </View>
-                                    <View style={styles._premium_view}>
-                                        <Text style={styles._premium_text}>No ads</Text>
-                                    </View>
-                                </View>
-                                <View style={{ flexDirection: "row" }}>
-                                    <View style={styles._features}>
-                                        <Text style={styles._features_text}>Cost</Text>
-                                    </View>
-                                    <View style={styles._premium_view}>
-                                        <Text style={styles._premium_text}>$19 (per month)</Text>
-                                    </View>
-                                </View>
-                                <TouchableOpacity style={styles._continue_button}>
-                                    <Text style={styles._continue_button_text}>Continue</Text>
-                                </TouchableOpacity>
-                            </View>
-                        </View>
-                    </Modal>
-                    {/* <<<<<<<<<<<<<   Card 3 >>>>>>>>>>>>> */}
-                    <TouchableOpacity style={styles._card1}
-                        onPress={() => {
-                            setModalVisible3(true);
-                        }}>
-                        <View style={{ flexDirection: "row" }}>
-                            <Image source={require('./../../assets/updated_logo.png')} style={styles._logo} />
-                            <Text style={styles._standard}> STANDARD</Text>
-                        </View>
-                        {/* <Text style={styles._premium_des}>Watch add to earn 20 credits</Text> */}
-                    </TouchableOpacity>
-
-                    {/* <<<<<<<<<<<<<  model  >>>>>>>>>>>>> */}
-
-                    <Modal
-                        animationType="slide"
-                        transparent={true}
-                        visible={modalVisible3}
-                        onRequestClose={() => {
-                            Alert.alert("Modal has been closed.");
-                        }}
-
-                    >
-                        <View style={styles.centeredView}>
-                            <View style={styles.modalView}>
-                                <TouchableOpacity
-                                    style={{ ...styles.openButton, justifyContent: "flex-end", marginTop: -20, marginLeft: "90%" }}
-                                    onPress={() => {
-                                        setModalVisible3(!modalVisible3);
-                                    }}
-                                >
-                                    <EvilIcons name="close" size={24} color="black" />
-                                </TouchableOpacity>
-                                <View style={{ flexDirection: "row" }}>
-                                    <Image source={require('./../../assets/updated_logo.png')} style={styles._logo} />
-                                    <Text style={styles._standard}> STANDARD</Text>
-                                </View>
-                                <View style={{ flexDirection: "row" }}>
-                                    <View style={styles._features}>
-                                        <Text style={styles._features_heading}>Features</Text>
-                                    </View>
-                                    <View style={styles._premium_view}>
-                                        <Text style={styles._premium_heading2}>Standard</Text>
-                                    </View>
-                                </View>
-                                <View style={{ flexDirection: "row" }}>
-                                    <View style={styles._features}>
-                                        <Text style={styles._features_text}>Swipe Right (24 hrs)</Text>
-                                    </View>
-                                    <View style={styles._premium_view}>
-                                        <Text style={styles._premium_text}>20</Text>
-                                    </View>
-                                </View>
-                                <View style={{ flexDirection: "row" }}>
-                                    <View style={styles._features}>
-                                        <Text style={styles._features_text}>Shown on top bar</Text>
-                                    </View>
-                                    <View style={styles._premium_view}>
-                                        <Text style={styles._premium_text}>No</Text>
-                                    </View>
-                                </View>
-                                <View style={{ flexDirection: "row" }}>
-                                    <View style={styles._features}>
-                                        <Text style={styles._features_text}>See who favourite you</Text>
-                                    </View>
-                                    <View style={styles._premium_view}>
-                                        <Text style={styles._premium_text}>No</Text>
-                                    </View>
-                                </View>
-                                <View style={{ flexDirection: "row" }}>
-                                    <View style={styles._features}>
-                                        <Text style={styles._features_text}>See who swiped right on you</Text>
-                                    </View>
-                                    <View style={styles._premium_view}>
-                                        <Text style={styles._premium_text}>No</Text>
-                                    </View>
-                                </View>
-                                <View style={{ flexDirection: "row" }}>
-                                    <View style={styles._features}>
-                                        <Text style={styles._features_text}>Quick text without match</Text>
-                                    </View>
-                                    <View style={styles._premium_view}>
-                                        <Text style={styles._premium_text}> No</Text>
-                                    </View>
-                                </View>
-                                <View style={{ flexDirection: "row" }}>
-                                    <View style={styles._features}>
-                                        <Text style={styles._features_text}>Boost profile (last 2 hrs)</Text>
-                                    </View>
-                                    <View style={styles._premium_view}>
-                                        <Text style={styles._premium_text}>No</Text>
-                                    </View>
-                                </View>
-                                <View style={{ flexDirection: "row" }}>
-                                    <View style={styles._features}>
-                                        <Text style={styles._features_text}>Super like</Text>
-                                    </View>
-                                    <View style={styles._premium_view}>
-                                        <Text style={styles._premium_text}>No</Text>
-                                    </View>
-                                </View>
-                                <View style={{ flexDirection: "row" }}>
-                                    <View style={styles._features}>
-                                        <Text style={styles._features_text}>Ads in app</Text>
-                                    </View>
-                                    <View style={styles._premium_view}>
-                                        <Text style={styles._premium_text}>Yes</Text>
-                                    </View>
-                                </View>
-                                <View style={{ flexDirection: "row" }}>
-                                    <View style={styles._features}>
-                                        <Text style={styles._features_text}>Cost</Text>
-                                    </View>
-                                    <View style={styles._premium_view}>
-                                        <Text style={styles._premium_text}>Free</Text>
-                                    </View>
-                                </View>
-                                <TouchableOpacity style={styles._continue_button2}>
-                                    <Text style={styles._continue_button_text}>Continue</Text>
-                                </TouchableOpacity>
-                            </View>
-                        </View>
-                    </Modal>
                     {/* <<<<<<<<<<<< Account Setting >>>>>>>>>>>> */}
                     <View style={{ marginTop: 50 }}>
                         <Text style={styles._heading}>Account Settings</Text>
@@ -436,17 +64,17 @@ const Setting = (props) => {
                                     <Text style={styles._current_location}>My Current Location</Text>
                                 </TouchableOpacity>
                             </View>
-                         
-                            {/* <View style={{ marginTop: 20 }}>
+
+                            <View style={{ marginTop: 20 }}>
                                 <View style={styles._mob_number_setting_main_sett}>
                                     <View style={styles._text_area}>
-                                        <Text style={styles._mob_number_heading}>Send Read Receipts</Text>
+                                        <Text style={styles._mob_number_heading}>Global</Text>
                                     </View>
                                     <View style={styles._button_area}>
                                         <ToggleButton />
                                     </View>
                                 </View>
-                            </View> */}
+                            </View>
                         </View>
                     </View>
 
@@ -466,7 +94,7 @@ const Setting = (props) => {
                     </View>
 
                     {/* <<<<<<<<<<<< Share my feed >>>>>>>>>>>> */}
-                    {/* <View style={{ marginTop: 20 }}>
+                    <View style={{ marginTop: 20 }}>
                         <View style={styles._mob_number_setting_main}>
                             <View style={styles._text_area}>
                                 <Text style={styles._mob_number_heading}>Share my feed</Text>
@@ -475,10 +103,10 @@ const Setting = (props) => {
                                 <ToggleButton />
                             </View>
                         </View>
-                    </View> */}
+                    </View>
 
                     {/* <<<<<<<<<<<< Recommended sort >>>>>>>>>>>> */}
-                    {/* <View style={{ marginTop: 20 }}>
+                    <View style={{ marginTop: 20 }}>
                         <View style={styles._mob_number_setting_main}>
                             <View style={styles._text_area}>
                                 <Text style={styles._mob_number_heading}>Recommended sort</Text>
@@ -487,10 +115,10 @@ const Setting = (props) => {
                                 <ToggleButton />
                             </View>
                         </View>
-                    </View> */}
+                    </View>
 
                     {/* <<<<<<<<<<<< Web Profile Setting >>>>>>>>>>>> */}
-                    {/* <View style={{ marginTop: 20 }}>
+                    <View style={{ marginTop: 20 }}>
                         <Text style={styles._heading}>Web Profile</Text>
                         <View style={styles._mob_number_setting_main}>
                             <Text style={styles._mob_number_heading}>Username</Text>
@@ -499,10 +127,10 @@ const Setting = (props) => {
                                 <EvilIcons name="chevron-right" size={24} color="gray" />
                             </TouchableOpacity>
                         </View>
-                    </View> */}
+                    </View>
 
                     {/* <<<<<<<<<<<< Top Picks >>>>>>>>>>>> */}
-                    {/* <View style={{ marginTop: 20 }}>
+                    <View style={{ marginTop: 20 }}>
                         <Text style={styles._heading}>Top Picks</Text>
                         <View style={styles._mob_number_setting_main}>
                             <View style={styles._text_area}>
@@ -512,11 +140,11 @@ const Setting = (props) => {
                                 <ToggleButton />
                             </View>
                         </View>
-                    </View> */}
+                    </View>
 
 
                     {/* <<<<<<<<<<<< Read Receipts >>>>>>>>>>>> */}
-                    {/* <View style={{ marginTop: 20 }}>
+                    <View style={{ marginTop: 20 }}>
                         <Text style={styles._heading}>Read Receipts</Text>
                         <View style={styles._mob_number_setting_main}>
                             <View style={styles._text_area}>
@@ -526,11 +154,11 @@ const Setting = (props) => {
                                 <ToggleButton />
                             </View>
                         </View>
-                    </View> */}
+                    </View>
 
 
                     {/* <<<<<<<<<<<< Swipe Surge >>>>>>>>>>>> */}
-                    {/* <View style={{ marginTop: 20 }}>
+                    <View style={{ marginTop: 20 }}>
                         <Text style={styles._heading}>Swipe Surge</Text>
                         <View style={styles._mob_number_setting_main}>
                             <View style={styles._text_area}>
@@ -540,7 +168,7 @@ const Setting = (props) => {
                                 <ToggleButton />
                             </View>
                         </View>
-                    </View> */}
+                    </View>
 
                     {/* <<<<<<<<<<<< Activity Status >>>>>>>>>>>> */}
                     <View style={{ marginTop: 20 }}>
@@ -559,14 +187,14 @@ const Setting = (props) => {
                     <View style={{ marginTop: 20 }}>
                         <Text style={styles._heading}>Notification</Text>
                         <View style={styles._notification_main}>
-                            {/* <View style={styles._mob_number_setting_main3}>
+                            <View style={styles._mob_number_setting_main3}>
                                 <View style={styles._text_area}>
                                     <Text style={styles._mob_number_heading}>Email</Text>
                                 </View>
                                 <View style={styles._button_area}>
                                     <ToggleButton />
                                 </View>
-                            </View> */}
+                            </View>
                             <View style={styles._mob_number_setting_main3}>
                                 <View style={styles._text_area}>
                                     <Text style={styles._mob_number_heading}>Push Notification</Text>
@@ -576,14 +204,14 @@ const Setting = (props) => {
                                 </View>
                             </View>
 
-                            {/* <View style={styles._mob_number_setting_main3}>
+                            <View style={styles._mob_number_setting_main3}>
                                 <View style={styles._text_area}>
                                     <Text style={styles._mob_number_heading}>Receive news letters</Text>
                                 </View>
                                 <View style={styles._button_area}>
                                     <ToggleButton />
                                 </View>
-                            </View> */}
+                            </View>
                         </View>
                     </View>
 
@@ -596,10 +224,10 @@ const Setting = (props) => {
                                 <Text style={styles._mob_number_heading}>Manage Payment Account</Text>
                                 <EvilIcons name="chevron-right" size={24} color="gray" />
                             </TouchableOpacity>
-                            {/* <TouchableOpacity style={styles._mob_number_setting_main3}>
+                            <TouchableOpacity style={styles._mob_number_setting_main3}>
                                 <Text style={styles._mob_number_heading}>Restore Purchase</Text>
                                 <EvilIcons name="chevron-right" size={24} color="gray" />
-                            </TouchableOpacity> */}
+                            </TouchableOpacity>
                         </View>
                     </View>
 
@@ -631,7 +259,7 @@ const Setting = (props) => {
                         <TouchableOpacity >
                             <Text style={styles._heading}>Share Date Right</Text>
                         </TouchableOpacity>
-                        {/* <TouchableOpacity >
+                        <TouchableOpacity >
                             <Text style={styles._heading}>Legal</Text>
                         </TouchableOpacity>
                         <TouchableOpacity >
@@ -642,7 +270,7 @@ const Setting = (props) => {
                         </TouchableOpacity>
                         <TouchableOpacity >
                             <Text style={styles._heading}>Terms of Services</Text>
-                        </TouchableOpacity> */}
+                        </TouchableOpacity>
                     </View>
 
 
@@ -650,7 +278,18 @@ const Setting = (props) => {
                     <TouchableOpacity
                         style={styles.button}
                         onPress={() => props.navigation.navigate("Login")}>
-                        <Text style={styles._button_txt}>Logout</Text>
+
+                        <LinearGradient
+                            // Button Linear Gradient
+                            end={[1.0, 0.5]}
+                            start={[0.0, 0.5]}
+                            locations={[0.0, 1.0]}
+                            colors={['#006F01', '#00F710']}
+                            style={{ alignItems: 'center', borderRadius: 5, borderRadius: 50 }}>
+
+                            <Text style={styles._button_txt}>Logout</Text>
+                        </LinearGradient>
+
                     </TouchableOpacity>
 
                     {/* <<<<<<<< Delete Account Button >>>>>>>>> */}
@@ -680,7 +319,7 @@ const styles = StyleSheet.create({
     },
     _header_text: {
         fontFamily: "MontserratSemiBold",
-        color: "#CA2C30",
+        color: "#000000",
         marginLeft: 20,
         fontWeight: "bold",
         fontSize: 20,
