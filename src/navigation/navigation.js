@@ -14,7 +14,6 @@ import Profile from './../screens/profile'
 import { MaterialIcons } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
-import Continue from './../screens/continue'
 import Moreinterest from './../screens/moreinterst'
 import Message from './../screens/message'
 import Notification from './../screens/notification'
@@ -71,7 +70,6 @@ function Navigation() {
         <Stack.Screen name="ResetPassword" component={ResetPassword} options={{ headerShown: false }} />
         <Stack.Screen name="Setting" component={Setting} options={{ headerShown: false }} />
         <Stack.Screen name="Editinfo" component={Editinfo} options={{ headerShown: false }} />
-        <Stack.Screen name="Continue" component={Continue} options={{ headerShown: false }} />
         <Stack.Screen name="Moreinterest" component={Moreinterest} options={{ headerShown: false }} />
         <Stack.Screen name="Message" component={Message} options={{ headerShown: false }} />
         <Stack.Screen name="Notification" component={Notification} options={{ headerShown: false }} />
